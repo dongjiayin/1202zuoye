@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en" ng-app='myApp'>
+<head>
+	<meta charset="UTF-8" >
+	<title>Document</title>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+	<link rel="stylesheet" href="./prd/styles/app.css">
+</head>
+<body>
+	<!-- demo1 -->
+	<!-- <div ng-controller='demoCon'>
+		你输入的值是：
+		<p>姓名是：{{user[0].name}} - - - email:{{user[0].email}}</p>
+		<p>姓名是：{{user[1].name}} - - - email:{{user[1].email}}</p>
+	</div> -->
+	<!-- demo2 -->
+	<!-- <div ng-controller='demoCon'>
+		<ul>
+			<li ng-repeat='item in user'>
+				<span>姓名是：{{item.name}}</span>
+				<span>邮箱是：{{item.email}}</span>
+			</li>
+		</ul>
+	</div> -->
+	<!-- demo3 -->
+	<!-- <div ng-controller='demoCon'>
+		<p ng-show='isShow'>是否显示？</p>
+		<p ng-hide='isHide'>是否隐藏？</p>
+		<p ng-if='isShow'>通过ng-if来显示或者隐藏</p>
+	</div> -->
+	<!-- demo4 -->
+	<!-- <div ng-controller='demoCon'>
+		<input type="text"  ng-model='counter'>
+		<input type="button" value='+' ng-click='add()'>
+		<p ng-bind='counter'></p>
+	</div> -->
+	<!-- demo5 -->
+	<!-- <div ng-controller='demoCon'>
+		<label for="">请输入您该兴趣的项目？</label>
+		<input type="text" placeholder='请输入您感兴趣的项目？' ng-model='item' ng-keyup='addItem($event)'>
+		<ul>
+			<li ng-repeat='item in items track by $index'>
+				{{item}}
+			</li>
+		</ul>
+	</div> -->
+	<!-- demo6 -->
+	<div ng-controller='demoCon' class='main'>
+		<!-- <p ng-bind='price | currency:"￥"'></p>
+		<p>{{price | currency:'人民币￥'}}</p> -->
+		<ul>
+			<!-- <li ng-repeat='book in books | limitTo:2'> -->
+			<li ng-repeat='book in books | orderBy:"updated" |limitTo:4'>
+				<p><span ng-class="{'title':book.publite}">{{book.name}}</span></p>
+				<!-- <span ng-bind="book.updated | date:'YYYY年MM月dd日'"></span> -->
+				<p>{{book.updated | date:'yyyy年MM月dd日 HH:mm'}}</p>
+				<p ng-class="{true:'enable',false:'disable'}[book.ishas]">有货</p>
+			</li>
+		</ul>
+		<div class="search">
+			<p><input type="text" ng-model='searchText'></p>
+			<table border='1'>
+				<thead>
+					<tr>
+						<td>ID</td>
+						<td>name</td>
+						<td>phone</td>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- <tr ng-repeat='item in friends | filter:searchText'> -->
+					<tr ng-repeat='item in friends | filter:search:value'>
+						<td>{{$index+1}}</td>
+						<td>{{item.name}}</td>
+						<td>{{item.phone}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div ng-controller='demo2' class='work'>
+		<div class='top'>
+			<p>
+				<input type="text" placeholder='search firstName' ng-model='firstText'>
+			</p>
+			<p>
+				<input type="text" placeholder='search lastName' ng-model='lastText'>
+			</p>
+			<p><input type="checkbox">Exac Match</p>
+		</div>
+		<table border='0'>
+			<thead>
+				<tr id='list'>
+					<td ng-click='first($event)'>FirstName<span ng-show='isShow' class='up'></span></td>
+					<td ng-click="col='LastName';desc=!desc">LastName<span ng-show='isShow' class='up'></span></td>
+					<td ng-click="col='Gender';desc=!desc">Gender<span ng-show='isShow' class='up'></span></td>
+					<td ng-click="col='Salary';desc=!desc">Salary<span ng-show='isShow' class='up'></span></td>
+					<td ng-click="col='Salarys';desc=!desc">Salary<span ng-show='isShow' class='up'></span></td>
+					<td ng-click="col='Birthday';desc=!desc">Birthday<span ng-show='isShow' class='up'></span></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="item in works | filter:give:value | orderBy:col:desc">
+					<td>{{item.first}}</td>
+					<td>{{item.last}}</td>
+					<td>{{item.gen}}</td>
+					<td>{{item.salary}}</td>
+					<td>{{item.salarys}}</td>
+					<td>{{item.birthday}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<script src='./libs/angular/angular.min.js'></script>
+	<script src='./libs/jquery-1.11.1.min.js'></script>
+	<script src='./prd/scripts/app.js'></script>	
+</body>
+</html>

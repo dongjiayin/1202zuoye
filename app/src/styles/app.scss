@@ -1,0 +1,96 @@
+@import './common/reset';
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	width:100%;
+	height:100%;
+
+}
+html{
+	font-size:100px;
+}
+.title{
+	color:red;
+	font-weight: bold;
+}
+.enable{
+	font-weight:bold;
+}
+.disable{
+	color:#cccccc;
+	text-decoration:line-through;
+}
+.main{
+	font-size:.16rem;
+	display: none;
+}
+.search{
+	margin:0 .3rem 0 .15rem;
+	>p{
+		padding:.1rem;
+	}
+	input{
+		width:2.4rem;
+		height:.3rem;
+		-webkit-appearance:none;
+	}
+	table{
+		width:100%;
+		border-collapse: collapse;
+		border:1px solid #000;
+	}
+	td{
+		text-align: center;
+		line-height:.3rem;
+	}
+	thead{
+		td{
+			font-weight: bold;
+			font-size: .18rem;
+		}
+	}
+}
+.work{	
+	margin:0 .2rem 0 .05rem;
+	font-size:.14rem;
+	color:#000;
+	table{
+		width:100%;
+		font-size:.14rem;
+		border-collapse: collapse;	
+	}
+	td{
+		border:1px solid #000;
+		text-align: center;
+	}
+	.top{
+		padding:.2rem 0;
+		p{
+			display:inline-block;
+		}
+	}
+	thead{
+		tr{
+			letter-spacing:1px;
+		}
+	}
+}
+.up{
+	width:0;
+	height:0;
+	border:4px solid transparent;
+	border-top-color:#000;
+	margin-top:.02rem;
+	display:inline-block;
+}
+.down{
+	width:0;
+	height:0;
+	border:4px solid transparent;
+	border-bottom-color:#000;
+	display:inline-block;
+	margin-bottom:.03rem;
+
+}

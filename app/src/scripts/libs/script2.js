@@ -1,0 +1,1 @@
+console.log('这个是script2.js文件');
