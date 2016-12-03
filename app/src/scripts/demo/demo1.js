@@ -100,7 +100,7 @@ myApp.controller('demo2',['$scope',function($scope){
 			last:'jess',
 			gen:'Female',
 			salary:'12.353.50',
-			salarys:'￥12\.333\.5',
+			salarys:'123335',
 			birthday:'2007-07-11'
 		},
 		{
@@ -108,7 +108,7 @@ myApp.controller('demo2',['$scope',function($scope){
 			last:'vane',
 			gen:'Male',
 			salary:'12.333.50',
-			salarys:'￥12\.333\.5',
+			salarys:'123335',
 			birthday:'2007-07-11'
 		},
 		{
@@ -116,7 +116,7 @@ myApp.controller('demo2',['$scope',function($scope){
 			last:'rose',
 			gen:'Female',
 			salary:'232.334.23',
-			salarys:'￥232\.334\.2',
+			salarys:'2323342',
 			birthday:'1997-02-03'
 		},
 		{
@@ -124,7 +124,7 @@ myApp.controller('demo2',['$scope',function($scope){
 			last:'hot',
 			gen:'Male',
 			salary:'66.880.50',
-			salarys:'￥66\.880\.5',
+			salarys:'668805',
 			birthday:'1986-03-22'
 		},
 		{
@@ -132,7 +132,7 @@ myApp.controller('demo2',['$scope',function($scope){
 			last:'bear',
 			gen:'Female',
 			salary:'68.000.00',
-			salarys:'￥68\.000',
+			salarys:'68000',
 			birthday:'1968-03-22'
 		}
 	]
