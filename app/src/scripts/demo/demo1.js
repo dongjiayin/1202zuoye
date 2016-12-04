@@ -99,75 +99,54 @@ myApp.controller('demo2',['$scope',function($scope){
 			first:'Keith',
 			last:'jess',
 			gen:'Female',
-			salary:'12.353.50',
-			salarys:'123335',
-			birthday:'2007-07-11'
+			salary:123335,
+			salarys:123335,
+			birthday:new Date('2007-07-11')
 		},
 		{
 			first:'FANG',
 			last:'vane',
 			gen:'Male',
-			salary:'12.333.50',
-			salarys:'123335',
-			birthday:'2007-07-11'
+			salary:123335,
+			salarys:123335,
+			birthday:new Date('2007-07-11')
 		},
 		{
 			first:'SARA',
 			last:'rose',
 			gen:'Female',
-			salary:'232.334.23',
-			salarys:'2323342',
-			birthday:'1997-02-03'
+			salary:232342,
+			salarys:232342,
+			birthday:new Date('1997-02-03')
 		},
 		{
 			first:'AAM',
 			last:'hot',
 			gen:'Male',
-			salary:'66.880.50',
-			salarys:'668805',
-			birthday:'1986-03-22'
+			salary:668805,
+			salarys:668805,
+			birthday:new Date('1986-03-22')
 		},
 		{
 			first:'MARK',
 			last:'bear',
 			gen:'Female',
-			salary:'68.000.00',
-			salarys:'68000',
-			birthday:'1968-03-22'
+			salary:68000,
+			salarys:68000,
+			birthday:new Date('1968-03-22')
 		}
 	]
-
-	$scope.isShow=false;
-	$scope.isHide=false;
-	// $scope.first=function(event){
-	// 	console.log(event)
-	// 	if(!$scope.isShow){
-	// 		$scope.isShow=true;
-	// 		$scope.isHide=true;
-
-	// 	}else{
-	// 		$scope.isShow=false;
-	// 	}
-	$scope.desc=0;
-	$scope.one='';
-	$scope.col='FirstName';
-	$('#list td').on('click',function(){
-		$scope.isShow=true;
-		if( $(this).find('span').hasClass('up') ){
-			$(this).find('span').addClass('down').removeClass('up').parent().siblings().find('span').removeClass();
-		}else{
-			$(this).find('span').addClass('up').removeClass('down').parent().siblings().find('span').removeClass();
+	$scope.sortColumn='name';
+	$scope.sortReverse=false;
+	$scope.setSort=function(column){
+		$scope.sortColumn = column;
+		$scope.sortReverse=$scope.sortColumn==column?!$scope.sortReverse:false;
+	}
+	$scope.getClass=function(column){
+		if($scope.sortColumn==column){
+			return $scope.sortReverse?'up':'down';
 		}
-		// if($(this).find('span').hasClass('up')){
-		// 	if($(this).find('span').hasClass('up')){
-		// 		$(this).find('span').addClass('down').parent().siblings().find('span').removeClass();
-		// 	}else{
-		// 		$(this).find('span').addClass('up').parent().siblings().find('span').removeClass();
-		// 	}
-		// }else{
-		// 	$(this).find('span').addClass('up').parent().siblings().find('span').removeClass();
-		// }
-	})
+	}
 	$scope.firstText='';
 	$scope.lastText='';
 	$scope.give=function(obj){

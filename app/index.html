@@ -91,22 +91,40 @@
 		<table border='0'>
 			<thead>
 				<tr id='list'>
-					<td ng-click='first($event)'>FirstName<span ng-show='isShow' class='up'></span></td>
-					<td ng-click="col='LastName';desc=!desc">LastName<span ng-show='isShow' class='up'></span></td>
-					<td ng-click="col='Gender';desc=!desc">Gender<span ng-show='isShow' class='up'></span></td>
-					<td ng-click="col='Salary';desc=!desc">Salary<span ng-show='isShow' class='up'></span></td>
-					<td ng-click="col='Salarys';desc=!desc">Salary<span ng-show='isShow' class='up'></span></td>
-					<td ng-click="col='Birthday';desc=!desc">Birthday<span ng-show='isShow' class='up'></span></td>
+					<td ng-click="setSort('first')">
+						FirstName
+						<span ng-class="getClass('first')"></span>
+					</td>
+					<td ng-click="setSort('last')">
+						LastName
+						<span ng-class="getClass('last')"></span>
+					</td>
+					<td ng-click="setSort('gen')">
+						Gender
+						<span ng-class="getClass('gen')"></span>
+					</td>
+					<td ng-click="setSort('salary')">
+						Salary
+						<span ng-class="getClass('salary')"></span>
+					</td>
+					<td ng-click="setSort('salarys')">
+						Salarys
+						<span ng-class="getClass('salarys')"></span>
+					</td>
+					<td ng-click="setSort('birthday')">
+						Birthday
+						<span ng-class="getClass('birthday')"></span>
+					</td>
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="item in works | filter:give:value | orderBy:col:desc">
+				<tr ng-repeat="item in works | filter:give:value | orderBy:sortColumn:sortReverse">
 					<td>{{item.first}}</td>
 					<td>{{item.last}}</td>
 					<td>{{item.gen}}</td>
-					<td>{{item.salary}}</td>
+					<td>{{item.salary | currency:''}}</td>
 					<td>{{item.salarys | currency:'￥'}}</td>
-					<td>{{item.birthday}}</td>
+					<td>{{item.birthday | date:'yyyy-MM-dd'}}</td>
 				</tr>
 			</tbody>
 		</table>
